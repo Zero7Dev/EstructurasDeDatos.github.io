@@ -50,7 +50,7 @@ const DriverForm = () => {
               required
             >
               <option value="">Seleccione un estado</option>
-              {field.options.map((option, index) => (
+              {field.options?.map((option, index) => (
                 <option key={index} value={option.toLowerCase()}>{option}</option>
               ))}
             </select>

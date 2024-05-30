@@ -1,5 +1,4 @@
-// components/InvoiceForm.js
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, FormEvent, useState } from 'react';
 
 const InvoiceForm = () => {
   const [formData, setFormData] = useState({
@@ -10,12 +9,12 @@ const InvoiceForm = () => {
     description: '',
   });
 
-  const handleChange = (e:ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e:ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(formData);
     // Aquí puedes agregar la lógica para enviar los datos a tu servidor
